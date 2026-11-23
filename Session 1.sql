@@ -6,10 +6,13 @@
 # with prices from 20 to 650, at least 3 priced above 150, and at least 4 with stock below 20.
 # Save the statements in `kirana_setup.sql`. Hint: One INSERT can hold many rows: `INSERT INTO products VALUES (...), (...);`</p>
 
+Drop database kirana_store_db;
+drop table if exists products;
+drop table if exists sales;
+
 create database kirana_store_db;
 use kirana_store_db;
 
-drop table if exists products;
 create table products(
 product_id int,
 product_name varchar (20),
@@ -32,10 +35,9 @@ value(1, "Moong", "Pluses", '49.5', 10),
      (11, "Sev", "Snacks", '19.5', 15),
      (12, "Nachos", "Snacks", '19.5', 10);
      
-select * from products;
 
 #Task 2 
-drop table if exists sales;
+
 create table sales(
 	sale_id int auto_increment,
     product_id int,
@@ -63,8 +65,12 @@ values(1, 2, '2026-10-01', 99.00),
      (4, 2, '2026-10-05', 199.00),
      (7, 1, '2026-10-05', 110.50);
      
-select * from sales;
-
 #Task 3
+
+describe products;
+describe sales;
+
+select * from products;
+select * from sales;
 
 
